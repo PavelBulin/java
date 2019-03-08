@@ -2,7 +2,7 @@
 * Java Level 1. AI
 *
 *@author Pavel Bulin
-*@version 03/04/2019 
+*@version 03/08/2019 
 *@link
 */
 import java.util.*;
@@ -66,8 +66,7 @@ class AI {
 							x = (int)Math.ceil(ind / siz);
 							y = (int)(ind - x * siz + siz);
 							if (m[--x][--y] == 0) {
-								m[x][y]
-								= 5;
+								m[x][y]	= 5;
 								break;
 							}
 						}
