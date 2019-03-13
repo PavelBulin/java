@@ -8,6 +8,7 @@
 import java.util.*;
 
 class AI {
+		public static int siz = 3;
 		public static int[][] m;
 		public static int[][] mas;
 
