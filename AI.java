@@ -2,7 +2,7 @@
 * Java Level 1. AI
 *
 *@author Pavel Bulin
-*@version 03/15/2019 
+*@version 03/20/2019 
 *@link
 */
 import java.util.*;
@@ -26,21 +26,21 @@ class AI {
 				ind = mas[di][dj];
 				if (mas[di][dj] != 0) { 
 					if (m[di][dj] == 1) { 
-						ind = ind + 1 * inv * var;
+						ind = mas[di][dj] + 1 * var * inv;
 						x = (int)ceil(ind / siz);
 						y = (int)(ind - x * siz + siz);
 						if (m[--x][--y] == 0) {
 							m[x][y] = 5;
 							break;
 						} 
-						ind = ind + (siz - 1 * var) * inv;
+						ind = mas[di][dj] + siz * inv;
 						x = (int)ceil(ind / siz);
 						y = (int)(ind - x * siz + siz);
 						if (m[--x][--y] == 0) {
 							m[x][y] = 5;
 							break;
 						} 
-						ind = ind + 1 * inv * var;
+						ind = mas[di][dj] + (siz + 1 * var) * inv;
 						x = (int)ceil(ind / siz);
 						y = (int)(ind - x * siz + siz);
 						if (m[--x][--y] == 0) {
@@ -54,5 +54,3 @@ class AI {
 		}
 	}
 }
-
-
