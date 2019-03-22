@@ -2,8 +2,8 @@
 * Java Level 1. AI
 *
 *@author Pavel Bulin
-*@version 03/20/2019 
-*@link
+*@version 03/22/2019 
+*@link https://github.com/PavelBulin/java.git
 */
 import java.util.*;
 import static java.lang.Math.*;
@@ -32,6 +32,7 @@ class AI {
 						y = (int)(ind - x * siz + siz);
 						if (m[--x][--y] == 0) {
 							m[x][y] = 5;
+							mas[di][dj] = 0;
 							break;
 						} 
 						ind = mas[di][dj] + siz * inv;
@@ -39,6 +40,7 @@ class AI {
 						y = (int)(ind - x * siz + siz);
 						if (m[--x][--y] == 0) {
 							m[x][y] = 5;
+							mas[di][dj] = 0;
 							break;
 						} 
 						ind = mas[di][dj] + (siz + 1 * var) * inv;
@@ -46,10 +48,16 @@ class AI {
 						y = (int)(ind - x * siz + siz);
 						if (m[--x][--y] == 0) {
 							m[x][y] = 5;
+							mas[di][dj] = 0;
 							break;
 						}
+						do {
+							x = rand.nextInt(siz);
+							y = rand.nextInt(siz);
+						} while (!isCellValid(x, y));
+						m[x][y] = 5;
+						mas[di][dj] = 0;
 					}
-					mas[di][dj] = 0;
 				}
 			}
 		}
