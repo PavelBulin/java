@@ -2,7 +2,7 @@
 * Java Level 2. Homework 3
 *
 *@author Pavel Bulin
-*@version 03/05/2019 
+*@version 04/19/2019 
 *@link https://github.com/PavelBulin/java.git
 */
 import java.util.*;
@@ -20,14 +20,13 @@ public class Collections {
 		HashSet<String> hs = new HashSet<String>();
 
 		Random rand = new Random();
-		System.out.println("-- wordStarts[] - Before sorted");
 		for (int i = 0; i < n; i++) {
 			r = rand.nextInt(words.length);
 			wordStarts[i] = words[r];
 			hs.add(wordStarts[i]);
 			System.out.print(wordStarts[i] + " ");
 		}
-		System.out.println();
+        System.out.println("\n" + hs);
 		String temp;
 		
 		do {
@@ -42,9 +41,8 @@ public class Collections {
 			}
 		} while (counter > 0);
 		
-		System.out.println("-- wordStarts[] after sorted");
 		for (int i = 0; i < n; i++) {
-			System.out.print(wordStarts[i] + " ");
+			// System.out.print(wordStarts[i] + " ");
 		}
 		
 		System.out.println();	
@@ -76,8 +74,6 @@ public class Collections {
 			}
 		} while (counter > 0);
 		
-		System.out.println("-- words[] --");
-		
 			for (int k = 0; k < words.length; k++) {
 				for (int j = 0; j < n; j++) {
 					for (int i = 0; i < n; i++) {
@@ -89,25 +85,10 @@ public class Collections {
 				}  
 			}
 			
-			// for (int k = 0; k < hs.size; k++) {
-				// for (int j = 0; j < words.length; j++) {
-					// if (words[k].equals(wordSorted[j][i])) {
-						// wordRepeats[k]++;
-						// break;
-					// }
-				// }
-			// }  
-			
 		for (int i = 0; i < n; i++) {
-			System.out.print(words[i] + " ");
+			System.out.print(words[i] + ", ");
 		}
 		
-		System.out.println();
-		
-		for (int k = 0; k < n; k++) {
-			System.out.print(wordRepeats[k] + "      ");
-		}
-
 		System.out.println();
 		
 		for (int k = 0; k < n; k++) {
@@ -115,19 +96,8 @@ public class Collections {
 				System.out.println(words[k] + " - " + wordRepeats[k]);
 		}
 		
-		System.out.println();
-		System.out.println(hs.size());
-		System.out.println(hs);
-	
-		System.out.println(wordStarts.length);
+		System.out.println("unique words: " + hs.size());
+		System.out.println("all words: " + wordStarts.length);
 	
 	}
 }
-
-
-
-
-
-
-
-
