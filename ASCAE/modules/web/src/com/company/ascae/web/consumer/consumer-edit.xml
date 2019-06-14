@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.ascae.web.consumer.ConsumerEdit"
+        datasource="consumerDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ascae.web.consumer">
+    <dsContext>
+        <datasource id="consumerDs"
+                    class="com.company.ascae.entity.Consumer"
+                    view="_local"/>
+        <collectionDatasource id="metersDs"
+                              class="com.company.ascae.entity.Meter"
+                              view="_local">
+            <query>
+                <![CDATA[select e from ascae$Meter e where e.consumer.id = :ds$consumerDs order by e.serialNO]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="consumerDs">
+            <column width="250px">
+                <field property="address"/>
+            </column>
+        </fieldGroup>
+        <label value="Meter"/>
+        <table id="metersTable"
+               height="200px"
+               width="100%">
+            <columns>
+                <column id="serialNO"/>
+                <column id="current_indicators"/>
+                <column id="is_used"/>
+            </columns>
+            <rows datasource="metersDs"/>
+        </table>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

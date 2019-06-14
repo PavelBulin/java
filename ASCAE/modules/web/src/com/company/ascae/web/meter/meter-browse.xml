@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ascae.web.meter.MeterBrowse"
+        focusComponent="metersTable"
+        lookupComponent="metersTable"
+        messagesPack="com.company.ascae.web.meter">
+    <dsContext>
+        <groupDatasource id="metersDs"
+                         class="com.company.ascae.entity.Meter"
+                         view="_local">
+            <query>
+                <![CDATA[select e from ascae$Meter e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="metersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="metersTable"
+                datasource="metersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="metersTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="serialNO"/>
+                <column id="current_indicators"/>
+                <column id="is_used"/>
+            </columns>
+            <rows datasource="metersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="metersTable.create"/>
+                <button id="editBtn"
+                        action="metersTable.edit"/>
+                <button id="removeBtn"
+                        action="metersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

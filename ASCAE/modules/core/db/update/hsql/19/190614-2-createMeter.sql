@@ -1,0 +1,2 @@
+alter table ASCAE_METER add constraint FK_ASCAE_METER_ON_CONSUMER foreign key (CONSUMER_ID) references ASCAE_CONSUMER(ID);
+create index IDX_ASCAE_METER_ON_CONSUMER on ASCAE_METER (CONSUMER_ID);

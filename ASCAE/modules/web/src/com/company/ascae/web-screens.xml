@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="ascae$Consumer.browse"
+            template="com/company/ascae/web/consumer/consumer-browse.xml"/>
+    <screen id="ascae$Consumer.edit"
+            template="com/company/ascae/web/consumer/consumer-edit.xml"/>
+    <screen id="ascae$Meter.browse"
+            template="com/company/ascae/web/meter/meter-browse.xml"/>
+    <screen id="ascae$Meter.edit"
+            template="com/company/ascae/web/meter/meter-edit.xml"/>
+</screen-config>
