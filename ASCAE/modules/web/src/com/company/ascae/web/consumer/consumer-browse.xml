@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ascae.web.consumer.ConsumerBrowse"
+        focusComponent="consumersTable"
+        lookupComponent="consumersTable"
+        messagesPack="com.company.ascae.web.consumer">
+    <dsContext>
+        <groupDatasource id="consumersDs"
+                         class="com.company.ascae.entity.Consumer"
+                         view="_local">
+            <query>
+                <![CDATA[select e from ascae$Consumer e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="consumersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="consumersTable"
+                datasource="consumersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="consumersTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="address"/>
+            </columns>
+            <rows datasource="consumersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="consumersTable.create"/>
+                <button id="editBtn"
+                        action="consumersTable.edit"/>
+                <button id="removeBtn"
+                        action="consumersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
