@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int flag = 0;
+        String[] INN = new String[9];
+
+        INN[0] = "111111111111";
+        INN[1] = "222222222222";
+        INN[2] = "333333333333";
+        INN[3] = "444444444444";
+        INN[4] = "555555555555";
+        INN[5] = "666666666666";
+        INN[6] = "777777777777";
+        INN[7] = "888888888888";
+        INN[8] = "999999999999";
+
+        System.out.println("Введите пожалуйста ИНН для сверки");
+        String usINN = sc.nextLine();
+
+        for (String aINN : INN) {
+            if (usINN.equals(aINN)) {
+                flag++;
+            }
+        }
+        if (flag > 0) {
+            System.out.println("Данный ИНН корректный");
+        } else {
+            System.out.println("ИНН не числится в базе! \nПожалуйста введите другой ИНН");
+        }
+    }
+}
